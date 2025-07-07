@@ -1,0 +1,3 @@
+../app/src/task_button.c:38:13:button_init_	4	static
+../app/src/task_button.c:45:23:button_process_state_	24	static
+../app/src/task_button.c:81:6:task_button	96	static
