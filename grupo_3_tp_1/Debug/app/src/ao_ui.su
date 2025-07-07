@@ -1,4 +1,0 @@
-../app/src/ao_ui.c:80:13:callback_	16	static
-../app/src/ao_ui.c:85:13:task_	40	static
-../app/src/ao_ui.c:128:6:ao_ui_send_event	16	static
-../app/src/ao_ui.c:133:6:ao_ui_init	24	static

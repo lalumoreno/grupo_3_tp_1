@@ -87,8 +87,11 @@ void task_button(void* argument)
 	while (1)
 	{
 		GPIO_PinState state = HAL_GPIO_ReadPin(BUTTON_PORT, BUTTON_PIN);
+#ifdef _F429ZI_
+		bool is_pressed = (state == GPIO_PIN_SET);
+#else
 		bool is_pressed = (state == GPIO_PIN_RESET);
-
+#endif
 		button_event_t event = button_process_state_(is_pressed);
 
 		if (event.type != BUTTON_TYPE_NONE)

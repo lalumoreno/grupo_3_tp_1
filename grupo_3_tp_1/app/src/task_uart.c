@@ -52,10 +52,17 @@ void uart_enviar_estado_boton(void)
 
 	const char* mensaje;
 
+#ifdef _F429ZI_
+	if (state == GPIO_PIN_SET)
+		mensaje = "Estado del boton: PRESIONADO\r\n";
+	else
+		mensaje = "Estado del boton: LIBERADO\r\n";
+#else
 	if (state == GPIO_PIN_RESET)  // Activo-bajo: presionado
 		mensaje = "Estado del boton: PRESIONADO\r\n";
 	else
 		mensaje = "Estado del boton: LIBERADO\r\n";
+#endif
 
 	HAL_UART_Transmit(&huart2, (uint8_t*)mensaje, strlen(mensaje), HAL_MAX_DELAY);
 }

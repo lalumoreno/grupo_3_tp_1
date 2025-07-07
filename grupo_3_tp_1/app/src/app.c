@@ -63,6 +63,9 @@ void app_init(void)
 	configASSERT(status == pdPASS);
 
 	/* Enviar mensaje por UART */
-	task_uart_app("app init\r\n");
+	task_uart_app("App init\r\n");
+#ifdef _F429ZI_
+	task_uart_app("Board F429ZI\r\n");
+#endif
 
 }
